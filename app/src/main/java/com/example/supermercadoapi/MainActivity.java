@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnProductos = findViewById(R.id.btnProductos);
         btnProductos.setOnClickListener(view -> abrirActividad(ProductosActivity.class));
-      //  btnProductos.setText(R.string.btn_productos);
+
 
 
     }

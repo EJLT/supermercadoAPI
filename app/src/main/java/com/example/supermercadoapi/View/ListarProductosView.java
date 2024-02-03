@@ -1,4 +1,4 @@
 package com.example.supermercadoapi.View;
 
-public class DetallesProductosActivity {
+public class ListarProductosView {
 }

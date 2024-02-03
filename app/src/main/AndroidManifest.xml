@@ -30,6 +30,10 @@
             android:name="com.example.supermercadoapi.MapsActivity"
             android:exported="true"
             android:label="Map"/>
+
+        <activity android:name=".ProductosActivity">
+        </activity>
     </application>
+
 
 </manifest>

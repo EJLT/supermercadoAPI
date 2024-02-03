@@ -12,9 +12,11 @@ public class Product {
     public Product(int id, String nombre, double precio, String descripcion, String procedencia){
         this.id = id;
         this.name = nombre;
+        this.precio = precio;
         this.descripcion = descripcion;
         this.procedencia = procedencia;
     }
+
 
 
     public int getId() {

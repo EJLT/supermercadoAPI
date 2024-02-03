@@ -15,6 +15,13 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.supermercadoapi.Contract.ProductsContract;
 import com.example.supermercadoapi.Domain.Product;
 import com.example.supermercadoapi.Presenter.ProductosPresenter;
+import com.example.supermercadoapi.View.AddProductosView;
+import com.example.supermercadoapi.View.BorrarProductosView;
+import com.example.supermercadoapi.View.DetallesProductosView;
+import com.example.supermercadoapi.View.ListarProductosView;
+import com.example.supermercadoapi.View.ModificarProductosView;
+
+import java.util.List;
 
 
 public class ProductosActivity extends AppCompatActivity implements ProductsContract.View {
@@ -26,7 +33,17 @@ private ProductsContract.Presenter presenter;
 
         presenter = new ProductosPresenter(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);  //
+        setSupportActionBar(toolbar);
+
+        toolbar.setOnMenuItemClickListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.action_maps) {
+                // Lógica para abrir la actividad de mapas (MapsActivity)
+                abrirActividad(MapsActivity.class);
+                return true;
+            }
+            return false;
+        });
 
         // Inicializar botones
         Button btnListarProductos = findViewById(R.id.btnListarProductos);
@@ -36,43 +53,43 @@ private ProductsContract.Presenter presenter;
         Button btnEliminarProductos = findViewById(R.id.btnEliminarProductos);
 
         // Establecer clic listeners
-        btnListarProductos.setOnClickListener(new View.OnClickListener(){
+        btnListarProductos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                presenter.listarProductos();
-            }
-        });
-        btnAddProductos.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                presenter.agregarProductos(new Product(0, "Nombre", 10.99, "Descripción", "Procedencia"));
+            public void onClick(View v) {
+                abrirActividad(ListarProductosView.class);
             }
         });
 
-        btnModificarProductos.setOnClickListener(new View.OnClickListener(){
+        btnAddProductos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                presenter.modificarProductos(1, new Product(1, "Nuevo Nombre", 15.99, "Nueva Descripción", "Nueva Procedencia"));
+            public void onClick(View v) {
+                abrirActividad(AddProductosView.class);
             }
         });
 
-        btnDetallesProductos.setOnClickListener(new View.OnClickListener(){
+        btnModificarProductos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                presenter.obtenerDetallesProductos(1);
+            public void onClick(View v) {
+                abrirActividad(ModificarProductosView.class);
             }
         });
 
-        btnEliminarProductos.setOnClickListener(new View.OnClickListener(){
+        btnDetallesProductos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-
-                presenter.eliminarProductos(1);
+            public void onClick(View v) {
+                abrirActividad(DetallesProductosView.class);
             }
         });
 
-
+        btnEliminarProductos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirActividad(BorrarProductosView.class);
+            }
+        });
     }
+
+
 
     private void abrirActividad(Class<?> actividad){
         Intent intent =new Intent(ProductosActivity.this, actividad);
@@ -92,4 +109,8 @@ private ProductsContract.Presenter presenter;
     }
 
 
+    @Override
+    public void mostrarProductos(List<Product> productList) {
+
+    }
 }

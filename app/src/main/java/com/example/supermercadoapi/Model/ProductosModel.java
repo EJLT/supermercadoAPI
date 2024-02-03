@@ -1,6 +1,7 @@
 package com.example.supermercadoapi.Model;
 
 import com.example.supermercadoapi.Api.ProductApi;
+import com.example.supermercadoapi.Contract.ProductsContract;
 import com.example.supermercadoapi.Domain.Product;
 
 import java.util.List;
@@ -9,11 +10,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProductosModel {
+public class ProductosModel implements ProductsContract {
 
     public interface OnDataReadyListener {
         void onDataReady(List<Product> productList);
     }
+
+    public interface OnProductAddedListener {
+        void onProductAdded(Product addedProduct);
+    }
+
 
     public void obtenerListaDeProductos(OnDataReadyListener listener) {
         ProductApi.getInstance().listProductos().enqueue(new Callback<List<Product>>() {
@@ -42,5 +48,7 @@ public class ProductosModel {
         });
 
 
+
+        }
     }
-}
+

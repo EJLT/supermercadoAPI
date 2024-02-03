@@ -33,6 +33,18 @@
 
         <activity android:name=".ProductosActivity">
         </activity>
+
+        <activity android:name=".View.AddProductosView">
+    </activity>
+
+        <activity android:name=".View.BorrarProductosView">
+        </activity>
+        <activity android:name=".View.DetallesProductosView">
+        </activity>
+        <activity android:name=".View.ModificarProductosView">
+        </activity>
+        <activity android:name=".View.ListarProductosView">
+        </activity>
     </application>
 
 

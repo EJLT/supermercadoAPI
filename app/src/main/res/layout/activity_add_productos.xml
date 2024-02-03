@@ -17,7 +17,7 @@
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:hint="Nombre del Producto"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/black" />
 
     <EditText
         android:id="@+id/editTextPrecioProducto"
@@ -27,7 +27,7 @@
         android:layout_marginTop="14dp"
         android:background="@color/white"
         android:hint="Precio del producto"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/black" />
 
 
     <Button

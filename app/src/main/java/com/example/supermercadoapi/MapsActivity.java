@@ -29,7 +29,7 @@ public class MapsActivity extends AppCompatActivity {
             mapboxMap.setStyle(Style.MAPBOX_STREETS, style -> {
                 Log.d("MapsActivity", "Estilo de mapa cargado correctamente");
                 // Ahora puedes agregar marcadores porque el estilo está listo
-                agregarMarcador(mapboxMap, new LatLng(41.6488, -0.8891), "Zona 1", "Descripción de la Zona 1");
+                agregarMarcador(mapboxMap, new LatLng(41.6488, -0.8891), "Zaragoza", "Ternasco de Aragón");
                 agregarMarcador(mapboxMap, new LatLng(41.6561, -0.8773), "Zona 2", "Descripción de la Zona 2");
                 agregarMarcador(mapboxMap, new LatLng(41.6584, -0.8780), "Zona 3", "Descripción de la Zona 3");
             });

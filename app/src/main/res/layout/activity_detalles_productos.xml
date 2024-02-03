@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Producto"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Precio: $XX.XX"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:padding="16sp"
+        android:layout_below="@+id/textViewNombre"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripción del producto"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:layout_below="@+id/textViewPrecio"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewProcedencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Procedencia: [País,Región,etc.]"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:layout_below="@id/textViewDescripcion"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>
+
+
+

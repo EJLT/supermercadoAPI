@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.example.supermercadoapi.ProductosActivity">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="361dp"
+        android:layout_height="47dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="¿Que acción deseas realizar?"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnListarProductos"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:text="Lista de Productos"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnAddProducto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/btnListarProductos"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:text="Agregar Productos"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnModificarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/btnAddProducto"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:text="Modificar Productos"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnDetallesProducto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/btnModificarProducto"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:text="Detalles del Producto"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnEliminarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_below="@+id/btnDetallesProducto"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:text="Eliminar Producto"
+        android:textColor="@android:color/black" />
+
+
+
+</RelativeLayout>

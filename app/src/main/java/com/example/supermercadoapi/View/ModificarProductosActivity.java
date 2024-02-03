@@ -1,2 +1,4 @@
-package com.example.supermercadoapi.View;public class ModificarProductosActivity {
+package com.example.supermercadoapi.View;
+
+public class ModificarProductosActivity {
 }

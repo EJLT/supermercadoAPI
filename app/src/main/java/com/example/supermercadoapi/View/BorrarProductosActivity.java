@@ -1,4 +1,4 @@
 package com.example.supermercadoapi.View;
 
-public class ListarProductosActivity {
+public class BorrarProductosActivity {
 }

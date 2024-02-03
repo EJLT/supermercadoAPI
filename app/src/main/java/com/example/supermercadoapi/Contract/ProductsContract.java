@@ -6,12 +6,13 @@ import java.util.List;
 
 public interface ProductsContract {
 
-    interface View{
-
+    interface View {
         void mostrarProductos(List<Product> productList);
+        void mostrarMensajeError(String mensaje);
+        void mostrarProductoAgregado(Product nuevoProducto);
     }
 
-    interface Presenter{
+    interface Presenter {
         void listarProductos();
         void agregarProductos(Product product);
         void modificarProductos(int productId, Product product);

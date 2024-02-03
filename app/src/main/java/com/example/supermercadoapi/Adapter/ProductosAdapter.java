@@ -40,12 +40,16 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
         holder.txtPrecioProducto.setText(String.valueOf(currentProduct.getPrecio()));
         holder.txtDescripcionProducto.setText(currentProduct.getDescripcion());
         holder.txtProcedenciaProducto.setText(currentProduct.getProcedencia());
-        // Puedes agregar más configuraciones según tus necesidades
+
     }
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        if (productList != null) {
+            return productList.size();
+        } else {
+            return 0;
+        }
     }
 
     static class ProductViewHolder extends RecyclerView.ViewHolder {

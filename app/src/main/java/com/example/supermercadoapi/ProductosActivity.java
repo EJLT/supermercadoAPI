@@ -113,4 +113,9 @@ private ProductsContract.Presenter presenter;
     public void mostrarProductos(List<Product> productList) {
 
     }
+
+    @Override
+    public void mostrarMensajeError(String mensaje) {
+
+    }
 }

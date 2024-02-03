@@ -50,4 +50,9 @@ public class ListarProductosView extends AppCompatActivity implements ProductsCo
         productosAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void mostrarMensajeError(String mensaje) {
+
+    }
+
 }

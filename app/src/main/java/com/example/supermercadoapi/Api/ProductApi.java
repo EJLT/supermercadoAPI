@@ -5,6 +5,7 @@ import static com.example.supermercadoapi.Api.Constants.BASE_URL;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// ProductApi.java
 public class ProductApi {
     private static ProductApiInterface productApiInstance;
 
@@ -20,3 +21,4 @@ public class ProductApi {
         return productApiInstance;
     }
 }
+

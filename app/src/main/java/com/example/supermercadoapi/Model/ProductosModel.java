@@ -16,11 +16,6 @@ public class ProductosModel implements ProductsContract {
         void onDataReady(List<Product> productList);
     }
 
-    public interface OnProductAddedListener {
-        void onProductAdded(Product addedProduct);
-    }
-
-
     public void obtenerListaDeProductos(OnDataReadyListener listener) {
         ProductApi.getInstance().listProductos().enqueue(new Callback<List<Product>>() {
             @Override
@@ -47,8 +42,7 @@ public class ProductosModel implements ProductsContract {
             }
         });
 
-
-
         }
+
     }
 

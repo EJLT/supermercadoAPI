@@ -52,7 +52,7 @@ public class ModificarProductosView extends AppCompatActivity implements Product
         String nuevaProcedencia = editTextModificarProcedencia.getText().toString();
 
         // Crea un objeto Product con los nuevos valores
-        Product productoModificado = new Product(1, nuevoNombre, nuevoPrecio, nuevaDescripcion, nuevaProcedencia);
+        Product productoModificado = new Product( nuevoNombre, nuevoPrecio, nuevaDescripcion, nuevaProcedencia);
 
         // Llama al método del presentador para modificar el producto
         presenter.modificarProductos(1, productoModificado);
@@ -67,6 +67,11 @@ public class ModificarProductosView extends AppCompatActivity implements Product
 
     @Override
     public void mostrarMensajeError(String mensaje) {
+
+    }
+
+    @Override
+    public void mostrarProductoAgregado(Product nuevoProducto) {
 
     }
 }

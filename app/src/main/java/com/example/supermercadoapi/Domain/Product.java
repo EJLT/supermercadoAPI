@@ -1,15 +1,29 @@
 package com.example.supermercadoapi.Domain;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "productos")
 public class Product {
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
+
+    @ColumnInfo(name = "nombre")
     private String name;
+
+    @ColumnInfo(name = "precio")
     private double precio;
+
+    @ColumnInfo(name = "descripcion")
     private String descripcion;
+
+    @ColumnInfo(name = "procedencia")
     private String procedencia;
 
-    public Product(int id, String nombre, double precio, String descripcion, String procedencia){
-        this.id = id;
-        this.name = nombre;
+    public Product(String name, double precio, String descripcion, String procedencia) {
+        this.name = name;
         this.precio = precio;
         this.descripcion = descripcion;
         this.procedencia = procedencia;

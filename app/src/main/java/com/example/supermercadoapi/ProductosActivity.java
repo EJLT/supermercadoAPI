@@ -118,4 +118,9 @@ private ProductsContract.Presenter presenter;
     public void mostrarMensajeError(String mensaje) {
 
     }
+
+    @Override
+    public void mostrarProductoAgregado(Product nuevoProducto) {
+
+    }
 }

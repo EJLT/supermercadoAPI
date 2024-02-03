@@ -55,4 +55,9 @@ public class ListarProductosView extends AppCompatActivity implements ProductsCo
 
     }
 
+    @Override
+    public void mostrarProductoAgregado(Product nuevoProducto) {
+
+    }
+
 }

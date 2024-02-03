@@ -3,14 +3,12 @@ package com.example.supermercadoapi.View;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import com.example.supermercadoapi.Contract.ProductsContract;
 import com.example.supermercadoapi.Domain.Product;
 import com.example.supermercadoapi.Presenter.ProductosPresenter;
 import com.example.supermercadoapi.R;
-
 import java.util.List;
 
 public class AddProductosView extends AppCompatActivity implements ProductsContract.View {
@@ -29,7 +27,7 @@ public class AddProductosView extends AppCompatActivity implements ProductsContr
         EditText editTextPrecioProducto = findViewById(R.id.editTextPrecioProducto);
         Button btnGuardarProducto = findViewById(R.id.btnGuardarProducto);
 
-        // Aquí puedes agregar lógica para manejar el clic del botón
+        // lógica para manejar el clic del botón
         btnGuardarProducto.setOnClickListener(view -> {
             String nombreProducto = editTextNombreProducto.getText().toString();
             String precioProductoStr = editTextPrecioProducto.getText().toString();
@@ -38,11 +36,10 @@ public class AddProductosView extends AppCompatActivity implements ProductsContr
                 double precioProducto = Double.parseDouble(precioProductoStr);
 
                 // Crea un objeto Product con los datos ingresados
-                Product nuevoProducto = new Product(0, nombreProducto, precioProducto, "", "");
+                Product nuevoProducto = new Product( nombreProducto, precioProducto, "", "");
                 // Llama al método del presentador para agregar el producto
                 presenter.agregarProductos(nuevoProducto);
             } else {
-
                 mostrarMensajeError("Por favor, completa todos los campos.");
             }
         });
@@ -55,8 +52,18 @@ public class AddProductosView extends AppCompatActivity implements ProductsContr
 
     // Método para mostrar mensajes de error
     public void mostrarMensajeError(String mensaje) {
-        // Implementa la lógica para mostrar el mensaje de error, por ejemplo, usando Toast
-        // o actualizando una vista específica en la interfaz de usuario.
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void mostrarProductoAgregado(Product nuevoProducto) {
+
+        mostrarMensajeExito("Producto agregado con éxito: " + nuevoProducto.getName());
+    }
+
+    // Método para mostrar mensajes de éxito
+    public void mostrarMensajeExito(String mensaje) {
+
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
     }
 }
-

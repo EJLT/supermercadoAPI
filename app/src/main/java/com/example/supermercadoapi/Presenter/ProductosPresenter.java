@@ -1,5 +1,7 @@
 package com.example.supermercadoapi.Presenter;
 
+import android.util.Log;
+
 import com.example.supermercadoapi.Api.Constants;
 import com.example.supermercadoapi.Api.ProductApi;
 import com.example.supermercadoapi.Api.ProductApiInterface;
@@ -21,7 +23,6 @@ public class ProductosPresenter implements ProductsContract.Presenter {
 
     public ProductosPresenter(ProductsContract.View view) {
         this.view = view;
-
         productApi = ProductApi.getInstance();
 
         // Configura Retrofit
@@ -54,13 +55,13 @@ public class ProductosPresenter implements ProductsContract.Presenter {
         });
     }
 
-    // ProductosPresenter.java
     @Override
     public void agregarProductos(Product product) {
         Call<Product> call = productApi.AgregarProducto(product);
         call.enqueue(new Callback<Product>() {
             @Override
             public void onResponse(Call<Product> call, Response<Product> response) {
+                Log.d("ProductosPresenter", "onResponse: Producto agregado");
                 if (response.isSuccessful()) {
                     // Producto agregado exitosamente
                     view.mostrarProductoAgregado(response.body());
@@ -72,6 +73,7 @@ public class ProductosPresenter implements ProductsContract.Presenter {
             @Override
             public void onFailure(Call<Product> call, Throwable t) {
                 // Manejar error de red al agregar el producto
+                Log.e("ProductosPresenter", "onFailure: Error de red al agregar el producto", t);
                 view.mostrarMensajeError("Error de red al agregar el producto");
             }
         });
